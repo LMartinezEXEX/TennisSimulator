@@ -9,7 +9,7 @@ You can just import this project to your favourite IDE and run it from there. Ot
 mkdir -p bin/com/simulator/app
 javac src/com/simulator/app/*.java -d bin/
 ```
-3. Now you are almost ready. We just need the run the program with
+3. Now you are almost ready. We just need to run the program with
 ```bash
 java -cp bin/ com.simulator.app.Simulator
 ```
@@ -30,9 +30,10 @@ The project is composed by a total of 6 classes:
 * Court: Represent half court keeping information of the 4 parts differentiated in this project (the ad area, deuce area, left backcourt and right backcourt). It also has a method to calculate the time needed by a player to reach a ball in a different section that it is in.
 
 
-#### Some key point to note.
+#### Some key points to note.
 - The ```winnable``` percentage of each player determines his speed and probability of hitting the ball and making slams.
 - The speed needed by the player to reach the ball, calculated by the Court class, has an aditional small random value to simulate some unexpected time needed, like response time, friction with ground or awareness.
+- This is a discrte-event simulation where all the important entities (Player, Ball, Court) were modeled as classes to (in a future) be able to graphic in a GUI easily. If you need to, you can create an abtsract class (let's say ```Entity```) to be extended by this classes and requiere a method like ```draw()``` to display each entity in a grapich manner to the user.
 
 ### Output
 This potject works in the command line, it (*at the moment*) doesn't have a GUI so let me explain what you will see when a simulation starts.
